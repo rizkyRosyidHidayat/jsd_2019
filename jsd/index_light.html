@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/uikit.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Jogja StartUp Day</title>
+</head>
+<body>    
+  <!-- banner -->
+  <article id="beranda" class="uk-background-image uk-padding-bottom" style="background-size: contain;" data-src="./img/background.webp" uk-img>
+    <!-- header -->
+    <header class="uk-position-z-index">
+      <nav class="uk-navbar-container uk-navbar-transparent">
+        <div class="uk-container uk-container-expand">
+          <div uk-navbar>       
+            <div class="uk-navbar-left">
+              <div class="uk-navbar-item">
+                <a href="" class="uk-logo">
+                  <img src="./img/logo.png" alt="logo jsd" width="100">
+                </a>
+              </div>
+            </div>     
+            <div class="uk-navbar-right uk-visible@m">
+              <ul class="uk-navbar-nav">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#acara">Acara</a></li>
+                <li><a href="#pemateri">Pemateri</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <!-- <li><a href="#merchandise">merchandise</a></li> -->
+                <li><a href="#alamat">alamat</a></li>
+              </ul>
+            </div>
+            <div class="uk-navbar-right uk-hidden@m">
+              <div class="uk-navbar-item">
+                <a href="#offcanvas-slide" uk-toggle>
+                  <span uk-icon="icon: table"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-visible uk-navbar-sticky uk-background-white; cls-inactive: uk-hidden; top: 200">
+        <nav class="uk-navbar-container">
+          <div class="uk-container uk-container-expand">
+            <div uk-navbar>       
+              <div class="uk-navbar-left">
+                <div class="uk-navbar-item">
+                  <a href="" class="uk-logo">
+                    <img src="./img/logo ungu.png" alt="logo jsd" width="100">
+                  </a>
+                </div>
+              </div>     
+              <div class="uk-navbar-right uk-visible@m">
+                <ul class="uk-navbar-nav">
+                  <li><a href="#beranda">Beranda</a></li>
+                  <li><a href="#acara">Acara</a></li>
+                  <li><a href="#pemateri">Pemateri</a></li>
+                  <li><a href="#timeline">Timeline</a></li>
+                  <!-- <li><a href="#merchandise">merchandise</a></li> -->
+                  <li><a href="#alamat">alamat</a></li>
+                </ul>
+              </div>
+              <div class="uk-navbar-right uk-hidden@m">
+                <div class="uk-navbar-item">
+                  <a href="#offcanvas-slide" uk-toggle>
+                    <span uk-icon="icon: table"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- body banner -->
+    <div class="uk-container" id="app">
+      <div v-if="isSelected === 'umum'" class="uk-child-width-1-2@s uk-grid-large uk-margin-medium-top uk-margin-xlarge-bottom" uk-grid>
+        <div>
+          <!-- paket -->
+          <div class="uk-margin">
+            <button @click="pilihPaket('umum')" class="uk-button uk-button-primary uk-border-pill uk-margin-small-right">
+              Paket umum
+            </button>
+            <button @click="pilihPaket('startup')" class="uk-button uk-button-default uk-light uk-border-pill uk-text-white">
+              Paket start up
+            </button>
+          </div>
+          <!-- heading -->
+          <section>
+            <div class="uk-heading-medium uk-text-white uk-text-bold">
+              Paket Umum
+            </div>
+            <!-- tab kelas -->
+            <ul uk-tab>
+              <li><a href="" @click="pilihKelas('a')">Kelas A</a></li>
+              <li><a href="" @click="pilihKelas('b')">Kelas B</a></li>
+              <li><a href="" @click="pilihKelas('c')">Kelas C</a></li>
+            </ul>
+            <!-- fasilitas -->
+            <div v-if="isKelas === 'a'" class="uk-child-width-1-2@m" uk-grid>
+              <div>                
+                <ul class="uk-list uk-list-bullet uk-text-warning">
+                  <li>Certificate of attendance</li>
+                  <li>Access to main stage talkshow sessions</li>
+                  <li>Jogja Startup Day Exclusive Kit</li>
+                  <li>Access to investor speed dating</li>
+                  <li>All videos of main stage talkshow sessions</li>
+                  <li>Access to startup database</li>
+                </ul>                
+              </div>
+              <div>                
+                <ul class="uk-list uk-list-bullet uk-text-white">
+                  <li>Network with +1000 attendees</li>
+                  <li>Access to +50 exhibition startups</li>
+                  <li>Access to ground stage</li>
+                  <li>Access to opening and closing ceremony</li>
+                  <li>Access to watch pitching competition</li>
+                  <li>Access to networking speed dating</li>
+                </ul>                
+              </div>
+            </div>
+            <!--  -->
+            <div v-if="isKelas === 'b'" class="uk-child-width-1-2@m" uk-grid>
+              <div>                
+                <ul class="uk-list uk-list-bullet uk-text-warning">
+                  <li>Certificate of attendance</li>
+                  <li>Access to main stage talkshow sessions</li>
+                  <li>Jogja Startup Day Exclusive Kit</li>
+                </ul>                
+              </div>
+              <div>                
+                <ul class="uk-list uk-list-bullet uk-text-white">
+                  <li>Network with +1000 attendees</li>
+                  <li>Access to +50 exhibition startups</li>
+                  <li>Access to ground stage</li>
+                  <li>Access to opening and closing ceremony</li>
+                  <li>Access to watch pitching competition</li>
+                  <li>Access to networking speed dating</li>
+                </ul>                
+              </div>
+            </div>
+            <!--  -->
+            <div v-if="isKelas === 'c'" class="uk-child-width-1-2@m" uk-grid>
+              <div>                
+                <ul class="uk-list uk-list-bullet uk-text-white">
+                  <li>Network with +1000 attendees</li>
+                  <li>Access to +50 exhibition startups</li>
+                  <li>Access to ground stage</li>
+                  <li>Access to opening and closing ceremony</li>
+                  <li>Access to watch pitching competition</li>
+                  <li>Access to networking speed dating</li>
+                </ul>                
+              </div>
+            </div>
+          </section>
+        </div>
+        <div>
+          <!-- pendaftaran -->
+          <div class="uk-card uk-card-body uk-card-default">
+            <!-- heading -->
+            <h2 class="uk-text-center uk-text-bold">
+              Daftar sekarang
+            </h2>
+            <!-- form -->
+            <form action="">
+              <div class="uk-margin">
+                <div class="">Nama lengkap</div>
+                <input class="uk-input border-bottom" type="text">
+              </div>
+              <div class="uk-margin">
+                <div class="">Nomor hp</div>
+                <input class="uk-input border-bottom" type="text">
+              </div>
+              <div class="uk-margin">
+                <div class="">Email</div>
+                <input class="uk-input border-bottom" type="email">
+              </div>
+              <div class="uk-margin">
+                <div class="">Kelas</div>
+                <select class="uk-select border-bottom">
+                  <option>Kelas A - 999.000</option>
+                  <option>Kelas B - 499.000</option>
+                  <option>Kelas C - FREE</option>
+                </select>
+              </div>
+              <!-- button -->
+              <button type="submit" class="uk-button uk-button-primary uk-margin-small-top uk-width-1-1">
+                daftar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div v-else-if="isSelected === 'startup'" class="uk-child-width-1-2@s uk-grid-large uk-margin-medium-top uk-margin-xlarge-bottom" uk-grid>
+        <div>
+          <!-- paket -->
+          <div class="uk-margin">
+            <button @click="pilihPaket('umum')" class="uk-button uk-button-default uk-border-pill uk-margin-small-right uk-text-white">
+              Paket umum
+            </button>
+            <button @click="pilihPaket('startup')" class="uk-button uk-button-primary uk-light uk-border-pill">
+              Paket start up
+            </button>
+          </div>
+          <!-- heading -->
+          <section>
+            <div class="uk-heading-medium uk-text-white uk-text-bold">
+              Paket Start Up
+            </div>
+            <!-- fasilitas -->
+            <div class="uk-child-width-1-2@m" uk-grid>
+              <div>                
+                <ul class="uk-list uk-list-bullet uk-text-warning">
+                  <li>Exhibition Stand</li>
+                  <li>Lunch and Dinner</li>
+                  <li>Certificate of attendance</li>
+                  <li>Access to main stage talkshow sessions</li>
+                  <li>Jogja Startup Day Exclusive Kit</li>
+                  <li>Access to investor speed dating</li>
+                  <li>All videos of main stage talkshow sessions</li>
+                  <li>Access to startup database</li>
+                </ul>                
+              </div>
+              <div>                
+                <ul class="uk-list uk-list-bullet uk-text-white">
+                  <li>Network with +1000 attendees</li>
+                  <li>Access to +50 exhibition startups</li>
+                  <li>Access to ground stage</li>
+                  <li>Access to opening and closing ceremony</li>
+                  <li>Access to watch pitching competition</li>
+                  <li>Access to networking speed dating</li>
+                </ul>                
+              </div>
+            </div>
+          </section>
+        </div>
+        <div>
+          <!-- pendaftaran -->
+          <div class="uk-card uk-card-body uk-card-default">
+            <!-- heading -->
+            <h2 class="uk-text-center uk-text-bold">
+              Daftar sekarang
+            </h2>
+            <!-- form -->
+            <form action="">
+              <div class="uk-margin">
+                <div class="">Anggota 1</div>
+                <input class="uk-input border-bottom" type="text">
+              </div>
+              <div class="uk-margin">
+                <div class="">Anggota 2</div>
+                <input class="uk-input border-bottom" type="text">
+              </div>
+              <div class="uk-margin">
+                <div class="">Nomor hp</div>
+                <input class="uk-input border-bottom" type="text">
+              </div>
+              <div class="uk-margin">
+                <div class="">Email</div>
+                <input class="uk-input border-bottom" type="email">
+              </div>
+              <!-- button -->
+              <button type="submit" class="uk-button uk-button-primary uk-margin-small-top uk-width-1-1">
+                Daftar 1.299.000
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  
+  <!-- hidding menu -->
+  <aside id="offcanvas-slide" uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar">
+      <button class="uk-offcanvas-close" type="button" uk-close></button>
+      <!--  -->
+      <br>
+      <ul class="uk-nav uk-nav-default uk-text-uppercase" uk-nav>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#acara">Acara</a></li>
+        <li><a href="#pemateri">Pemateri</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <!-- <li><a href="#merchandise">merchandise</a></li> -->
+        <li><a href="#alamat">alamat</a></li>
+      </ul>
+    </div>
+  </aside>
+  
+  <!-- acara -->
+  <article id="acara" class="uk-padding-bottom uk-background-white">
+    <div class="uk-container">
+      <!-- content acara -->
+      <section class="acara uk-box-shadow-medium">
+        <div class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid-collapse" uk-grid>
+          <div>          
+            <div class="uk-card uk-card-body uk-background-white">
+              <div class="uk-margin">
+                <img data-src="./img/d.jpg" width="50%" alt="ilustrasi" uk-img>
+              </div>
+              <div class="uk-card-title">Acara</div>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Voluptatibus commodi ipsa officia ab corporis
+              </p>
+            </div>
+          </div>
+          <div>          
+            <div class="uk-card uk-card-body uk-background-white">
+              <div class="uk-margin">
+                <img data-src="./img/d.jpg" width="50%" alt="ilustrasi" uk-img>
+              </div>
+              <div class="uk-card-title">Acara</div>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Voluptatibus commodi ipsa officia ab corporis
+              </p>
+            </div>
+          </div>
+          <div>          
+            <div class="uk-card uk-card-body uk-background-white">
+              <div class="uk-margin">
+                <img data-src="./img/d.jpg" width="50%" alt="ilustrasi" uk-img>
+              </div>
+              <div class="uk-card-title">Acara</div>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Voluptatibus commodi ipsa officia ab corporis
+              </p>
+            </div>
+          </div>
+          <div>          
+            <div class="uk-card uk-card-body uk-background-white">
+              <div class="uk-margin">
+                <img data-src="./img/d.jpg" width="50%" alt="ilustrasi" uk-img>
+              </div>
+              <div class="uk-card-title">Acara</div>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Voluptatibus commodi ipsa officia ab corporis
+              </p>
+            </div>
+          </div>
+          <div>          
+            <div class="uk-card uk-card-body uk-background-white">
+              <div class="uk-margin">
+                <img data-src="./img/d.jpg" width="50%" alt="ilustrasi" uk-img>
+              </div>
+              <div class="uk-card-title">Acara</div>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Voluptatibus commodi ipsa officia ab corporis
+              </p>
+            </div>
+          </div>
+          <div>          
+            <div class="uk-card uk-card-body uk-background-white">
+              <div class="uk-margin">
+                <img data-src="./img/d.jpg" width="50%" alt="ilustrasi" uk-img>
+              </div>
+              <div class="uk-card-title">Acara</div>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Voluptatibus commodi ipsa officia ab corporis
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </article>
+  
+  <!-- pembicara -->
+  <article id="pemateri" class="uk-section uk-background-white">    
+    <div class="uk-container">      
+      <!-- about -->
+      <section class="uk-text-center uk-margin-large-bottom">
+        <h1 class="uk-text-bold">Pemateri</h1>
+        <p class="uk-text-lead">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+      </section>
+      <div class="uk-child-width-1-4@m uk-child-width-1-2@s" uk-grid>
+        <div>
+          <!-- img pemateri -->
+          <div class="uk-background-image uk-height-large" data-src="./img/university.jpg" uk-img></div>
+          <!-- detail pemateri -->
+          <div class="detail-pemateri">
+            <span class="uk-text-warning">Jabatan</span>
+            <h2 class="uk-margin-remove-top">Nama Speaker</h2>
+            <p class="">
+              <span uk-icon="icon: quote-right"></span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <span uk-icon="icon: quote-right"></span>
+            </p>
+          </div>
+        </div>
+        <div>
+          <!-- img pemateri -->
+          <div class="uk-background-image uk-height-large" data-src="./img/university.jpg" uk-img></div>
+          <!-- detail pemateri -->
+          <div class="detail-pemateri">
+            <span class="uk-text-warning">Jabatan</span>
+            <h2 class="uk-margin-remove-top">Nama Speaker</h2>
+            <p class="">
+              <span uk-icon="icon: quote-right"></span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <span uk-icon="icon: quote-right"></span>
+            </p>
+          </div>
+        </div>
+        <div>
+          <!-- img pemateri -->
+          <div class="uk-background-image uk-height-large" data-src="./img/university.jpg" uk-img></div>
+          <!-- detail pemateri -->
+          <div class="detail-pemateri">
+            <span class="uk-text-warning">Jabatan</span>
+            <h2 class="uk-margin-remove-top">Nama Speaker</h2>
+            <p class="">
+              <span uk-icon="icon: quote-right"></span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <span uk-icon="icon: quote-right"></span>
+            </p>
+          </div>
+        </div>
+        <div>
+          <!-- img pemateri -->
+          <div class="uk-background-image uk-height-large" data-src="./img/university.jpg" uk-img></div>
+          <!-- detail pemateri -->
+          <div class="detail-pemateri">
+            <span class="uk-text-warning">Jabatan</span>
+            <h2 class="uk-margin-remove-top">Nama Speaker</h2>
+            <p class="">
+              <span uk-icon="icon: quote-right"></span>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <span uk-icon="icon: quote-right"></span>
+            </p>
+          </div>
+        </div>
+      </div>  
+    </div>  
+  </article>
+  
+  <!-- timeline -->
+  <article id="timeline" class="uk-section uk-background-white">
+    <div class="uk-container">
+      <div class="uk-width-2-3@m uk-margin-auto">
+        <div class="uk-child-width-1-2@s" uk-grid>
+          <div>
+            <div class="uk-background-image uk-height-large" data-src="./img/university.jpg" uk-img></div>
+          </div>
+          <div class="uk-flex uk-flex-middle">
+            <div>
+              <span class="uk-text-warning">29 Okteober 2019</span>
+              <h1 class="uk-text-bold uk-margin-remove-top">Nama Acara</h1>
+              <div class="uk-card uk-card-body uk-card-default detail-acara-left">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Ipsa odio, natus ut rerum ipsum totam perspiciatis quam 
+                doloremque dolor pariatur ducimus architecto, aspernatur 
+                deleniti quis, minus culpa enim molestiae explicabo.
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="uk-child-width-1-2@s" uk-grid>
+          <div class="uk-flex uk-flex-middle order-2">
+            <div class="uk-text-right right-to-left">
+              <span class="uk-text-warning">29 Okteober 2019</span>
+              <h1 class="uk-text-bold uk-margin-remove-top">Nama Acara</h1>
+              <div class="uk-card uk-card-body uk-card-default detail-acara-right">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Ipsa odio, natus ut rerum ipsum totam perspiciatis quam 
+                doloremque dolor pariatur ducimus architecto, aspernatur 
+                deleniti quis, minus culpa enim molestiae explicabo.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="uk-background-image uk-height-large" data-src="./img/university.jpg" uk-img></div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="uk-child-width-1-2@s" uk-grid>
+          <div>
+            <div class="uk-background-image uk-height-large" data-src="./img/university.jpg" uk-img></div>
+          </div>
+          <div class="uk-flex uk-flex-middle">
+            <div>
+              <span class="uk-text-warning">29 Okteober 2019</span>
+              <h1 class="uk-text-bold uk-margin-remove-top">Nama Acara</h1>
+              <div class="uk-card uk-card-body uk-card-default detail-acara-left">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Ipsa odio, natus ut rerum ipsum totam perspiciatis quam 
+                doloremque dolor pariatur ducimus architecto, aspernatur 
+                deleniti quis, minus culpa enim molestiae explicabo.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  
+  <!-- daftar -->
+  <article class="uk-background-white">
+    <div class="uk-child-width-1-2@m uk-grid-collapse" uk-grid>
+      <div class="uk-background-image" data-src="./img/university.jpg" uk-img>
+        <div class="uk-flex uk-flex-middle uk-flex-center uk-text-center uk-height-viewport">
+          <div class="uk-container">
+            <div class="uk-heading-small uk-text-bold uk-text-white">
+              PAKET UMUM
+            </div>
+            <p class="uk-text-lead uk-text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Amet molestiae distinctio reprehenderit molestias sequi.
+            </p>
+            <a href="#beranda" class="uk-button uk-button-primary uk-border-pill">
+              DAFTAR SEKARANG
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="uk-background-image" data-src="./img/akademi.jpg" uk-img>
+        <div class="uk-flex uk-flex-middle uk-flex-center uk-text-center uk-height-viewport">
+          <div class="uk-container">
+            <div class="uk-heading-small uk-text-bold uk-text-white">
+              PAKET UMUM
+            </div>
+            <p class="uk-text-lead uk-text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Amet molestiae distinctio reprehenderit molestias sequi.
+            </p>
+            <a href="#beranda" class="uk-button uk-button-primary uk-border-pill">
+              DAFTAR SEKARANG
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  
+  <!-- merchandise
+    <article id="merchandise" class="uk-section uk-background-white">
+      <div class="uk-container">
+        <div class="uk-text-center uk-margin-large-bottom">
+          <h1 class="uk-text-bold">Merchandise</h1>
+          <p class="uk-text-lead">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+        </div>
+        <div class="merchandise uk-child-width-1-4@l uk-child-width-1-2@s uk-grid-collapse" uk-grid>
+          <div>
+            <div class="uk-card uk-card-body uk-card-hover">
+              <img data-src="./img/musa.jpg" width="100%" alt="merchandise" uk-img>
+              <div class="detail-barang">
+                <div class="uk-text-lead">
+                  Nama barang
+                </div>
+                <div class="uk-text-warning uk-text-bold uk-margin-small-bottom harga-barang">
+                  Rp. 100.000
+                </div>
+                <div class="uk-child-width-1-2 uk-grid-small" uk-grid>
+                  <div>
+                    <span>Jumlah</span>
+                    <input type="text" class="uk-input uk-form-small">
+                  </div>
+                  <div>
+                    <span>Ukuran</span>
+                    <select class="uk-select uk-form-small">
+                      <option value="S">S</option>
+                      <option value="M">M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                    </select>
+                  </div>
+                </div>
+                <br>
+                <button class="uk-button uk-button-default uk-border-primary uk-width-1-1 uk-border-pill">
+                  pesan
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="uk-card uk-card-body uk-card-hover">
+              <img data-src="./img/musa.jpg" width="100%" alt="merchandise" uk-img>
+              <div class="detail-barang">
+                <div class="uk-text-lead">
+                  Nama barang
+                </div>
+                <div class="uk-text-warning uk-text-bold uk-margin-small-bottom harga-barang">
+                  Rp. 100.000
+                </div>
+                <div class="uk-child-width-1-2 uk-grid-small" uk-grid>
+                  <div>
+                    <span>Jumlah</span>
+                    <input type="text" class="uk-input uk-form-small">
+                  </div>
+                  <div>
+                    <span>Ukuran</span>
+                    <select class="uk-select uk-form-small">
+                      <option value="S">S</option>
+                      <option value="M">M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                    </select>
+                  </div>
+                </div>
+                <br>
+                <button class="uk-button uk-button-default uk-border-primary uk-width-1-1 uk-border-pill">
+                  pesan
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="uk-card uk-card-body uk-card-hover">
+              <img data-src="./img/musa.jpg" width="100%" alt="merchandise" uk-img>
+              <div class="detail-barang">
+                <div class="uk-text-lead">
+                  Nama barang
+                </div>
+                <div class="uk-text-warning uk-text-bold uk-margin-small-bottom harga-barang">
+                  Rp. 100.000
+                </div>
+                <div class="uk-child-width-1-2 uk-grid-small" uk-grid>
+                  <div>
+                    <span>Jumlah</span>
+                    <input type="text" class="uk-input uk-form-small">
+                  </div>
+                  <div>
+                    <span>Ukuran</span>
+                    <select class="uk-select uk-form-small">
+                      <option value="S">S</option>
+                      <option value="M">M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                    </select>
+                  </div>
+                </div>
+                <br>
+                <button class="uk-button uk-button-default uk-border-primary uk-width-1-1 uk-border-pill">
+                  pesan
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <div class="uk-card uk-card-body uk-card-hover">
+              <img data-src="./img/musa.jpg" width="100%" alt="merchandise" uk-img>
+              <div class="detail-barang">
+                <div class="uk-text-lead">
+                  Nama barang
+                </div>
+                <div class="uk-text-warning uk-text-bold uk-margin-small-bottom harga-barang">
+                  Rp. 100.000
+                </div>
+                <div class="uk-child-width-1-2 uk-grid-small" uk-grid>
+                  <div>
+                    <span>Jumlah</span>
+                    <input type="text" class="uk-input uk-form-small">
+                  </div>
+                  <div>
+                    <span>Ukuran</span>
+                    <select class="uk-select uk-form-small">
+                      <option value="S">S</option>
+                      <option value="M">M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
+                    </select>
+                  </div>
+                </div>
+                <br>
+                <button class="uk-button uk-button-default uk-border-primary uk-width-1-1 uk-border-pill">
+                  pesan
+                </button>
+              </div>
+            </div>
+          </div>        
+        </div>
+      </div>
+    </article> -->
+    
+    <!-- alamat -->
+    <article id="alamat" class="uk-section uk-background-white">
+      <div class="uk-container">
+        <div uk-grid>
+          <div class="uk-width-1-3@s">
+            <b class="uk-text-warning">
+              Tempat Pelaksanaan
+            </b>
+            <div class="uk-heading-small uk-text-capitalize uk-margin-remove-top uk-margin-medium-bottom">
+              universitas amikom yogyakarta
+            </div>
+            <div class="uk-flex">
+              <div class="uk-margin-medium-right">
+                <span class="uk-text-warning" uk-icon="icon: location;ratio: 3;"></span>
+              </div>
+              <div class="uk-text-lead">
+                Jl. Ring Road Utara, Condong Catur, Sleman, Yogyakarta
+              </div>
+            </div>
+          </div>
+          <div class="uk-width-2-3@s">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15825.354234455532!2d109.95743216980844!3d-7.4277351365217825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a98968b6f02f9%3A0x5027a76e3557bb0!2sKedalon%2C+Kalikajar%2C+Wonosobo+Regency%2C+Central+Java!5e0!3m2!1sen!2sid!4v1550534559436" style="width: 100%;" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- bg hiding -->
+    <article data-src="./img/DSCF4880.jpg" style="background-position: bottom;" class="bg-hiding uk-background-image uk-position-fixed uk-position-cover" uk-img>
+    </article>
+    
+    <!-- kontak -->
+    <article class="uk-section uk-height-viewport uk-background-transparent">
+      <div class="uk-container">
+        <div class="uk-child-width-1-2@s" uk-grid>
+          <div>
+            <h1 class="uk-text-capitalize uk-text-bold uk-text-white">Jogja start up day</h1>
+            <p class="uk-text-white">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Sapiente, laborum ad enim nostrum pariatur cupiditate 
+              rerum. Rem, ratione soluta! Autem maxime dolor iure 
+              quae est nesciunt delectus ex repellat sapiente!
+            </p>
+            <!--  -->
+            <h1 class="uk-text-capitalize uk-text-bold uk-text-white">daftar sekarang</h1>          
+            <div>
+              <button class="uk-button uk-button-primary uk-border-pill uk-margin-small-right">
+                Paket umum
+              </button>
+              <button class="uk-button uk-button-default uk-light uk-border-pill uk-text-white">
+                Paket start up
+              </button>
+            </div>
+            <!--  -->
+            <h1 class="uk-text-capitalize uk-text-bold uk-text-white">kontak kami</h1>
+            <div class="uk-flex uk-text-white uk-margin-small-bottom">
+              <div class="uk-margin-small-right">
+                <span uk-icon="icon: instagram;"></span>
+              </div>
+              <div>@jogjastartupday</div>
+            </div>
+            <div class="uk-flex uk-text-white">
+              <div class="uk-margin-small-right">
+                <span uk-icon="icon: whatsapp;"></span>
+              </div>
+              <div>+62 895 0098 7689</div>
+            </div>
+          </div>
+          <div>
+            <div class="uk-card uk-card-body uk-card-default">
+              <h2 class="uk-text-center uk-text-bold">
+                Hubungi Kami
+              </h2>
+              <form action="">
+                <div class="uk-margin">
+                  <input type="text" class="uk-input" placeholder="Email">
+                </div>
+                <div class="uk-margin">
+                  <textarea class="uk-textarea" placeholder="Pesan" rows="5"></textarea>
+                </div>
+                <div class="uk-margin uk-clearfix">
+                  <button type="submit" class="uk-button uk-button-primary uk-float-right">
+                    Kirim
+                  </button>
+                </div>
+              </form>
+              <div class="uk-margin">
+                <div class="uk-heading-line uk-text-center uk-text-muted"><span>ATAU</span></div>
+              </div>
+              <div class="uk-text-center">
+                <a href="" class="uk-button uk-button-link">
+                  <span class="uk-margin-small-right" uk-icon="icon: whatsapp;"></span> Via WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <!-- sponsor dan media partner -->
+    <article class="uk-section uk-background-white">
+      <div class="uk-container">
+        <h3>Sponsor</h3>
+        <div class="uk-child-width-1-5@s" uk-grid>
+          <div><div class="uk-card uk-card-body uk-background-muted"></div></div>
+          <div><div class="uk-card uk-card-body uk-background-muted"></div></div>
+          <div><div class="uk-card uk-card-body uk-background-muted"></div></div>
+          <div><div class="uk-card uk-card-body uk-background-muted"></div></div>
+          <div><div class="uk-card uk-card-body uk-background-muted"></div></div>
+        </div>
+        <h3>Media partner</h3>
+        <div class="uk-child-width-1-5@s" uk-grid>
+          <div><div class="uk-card uk-card-body uk-background-muted"></div></div>
+          <div><div class="uk-card uk-card-body uk-background-muted"></div></div>
+          <div><div class="uk-card uk-card-body uk-background-muted"></div></div>
+          <div><div class="uk-card uk-card-body uk-background-muted"></div></div>
+          <div><div class="uk-card uk-card-body uk-background-muted"></div></div>
+        </div>
+        <footer class="uk-margin-large-top">
+          <center>
+            &copy; 2019. Jogja Start Up Day
+          </center>
+        </footer>
+      </div>
+    </article>    
+    
+    <script src="./js/uikit.min.js"></script>
+    <script src="./js/uikit-icons.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script>
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          isSelected: 'umum',
+          isKelas: 'a',
+        },
+        methods: {
+          pilihPaket (val) {
+            this.isSelected = val
+          },
+          pilihKelas (val) {
+            this.isKelas = val
+          }
+        }
+      })
+    </script>
+  </body>
+  </html>

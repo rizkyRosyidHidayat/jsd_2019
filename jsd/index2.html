@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/css/uikit.min.css" />
+  <link rel="stylesheet" href="./css/style2.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header class="uk-position-absolute uk-width-1-1 uk-position-z-index">
+    <div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 200">
+      <nav class="uk-navbar-container">
+        <div class="uk-container uk-container-expand">
+          <div uk-navbar>            
+            <div class="uk-navbar-right">
+              <ul class="uk-navbar-nav">
+                <li><a href="#">Active</a></li>
+                <li><a href="#">Parent</a></li>
+                <li><a href="#">Item</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- tiket -->
+  <article class="first" id="app">
+    <div class="uk-child-width-expand@s uk-grid-collapse" uk-grid>
+      <div :class="umum.width" data-src="./img/university.jpg" uk-img>
+        <div class="uk-container">
+          <div v-if="umum.icon">
+            <div class="uk-flex uk-flex-center uk-flex-middle uk-height-viewport">
+              <div>
+                <center>
+                  <div class="uk-icon uk-text-white pointer" uk-icon="icon: chevron-left; ratio: 3"
+                    @click="isSelected('umum')"></div>
+                </center>
+                <p class="uk-text-white">Paket umum</p>
+              </div>
+            </div>
+          </div>
+          <div v-else>
+            <div class="uk-flex uk-flex-right uk-flex-middle uk-height-viewport">
+              <div>
+                <div :class="umum.heading">
+                  <b class="uk-text-white">Paket <br> Umum</b>
+                </div>
+                <div class="uk-flex uk-flex-right">
+                  <div class="uk-button uk-button-primary" @click="isSelected('umum')">
+                    <span class="uk-text-white">try now</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div :class="umum.hidden">
+          <div class="uk-section uk-background-white">
+            <div class="uk-container">
+              <h1 class="uk-margin-medium-bottom uk-text-bold">Fasilitas</h1>
+              <div class="uk-child-width-expand@s" uk-grid>
+                <div>
+                  <h2 class="uk-text-center uk-margin-medium-bottom">Kelas A</h2>
+                  <div class="uk-card uk-card-primary uk-card-body">
+                    <ul class="uk-list uk-list-divider uk-text-white">
+                      <li>Certificate of attendance</li>
+                      <li>Access to main stage talkshow sessions</li>
+                      <li>Jogja Startup Day Exclusive Kit</li>
+                      <li>Access to investor speed dating</li>
+                      <li>All videos of main stage talkshow sessions</li>
+                      <li>Access to startup database</li>
+                    </ul>
+                  </div>
+                  <div class="uk-card uk-card-default uk-card-body">
+                    <ul class="uk-list uk-list-divider">
+                      <li>Network with +1000 attendees</li>
+                      <li>Access to +50 exhibition startups</li>
+                      <li>Access to ground stage</li>
+                      <li>Access to opening and closing ceremony</li>
+                      <li>Access to watch pitching competition</li>
+                      <li>Access to networking speed dating</li>
+                    </ul>
+                  </div>
+                  <button class="uk-button uk-button-primary uk-width-1-1 uk-padding-small">
+                    <h3 class="uk-text-white">Rp. 999.000</h3>
+                  </button>
+                </div>
+                <div>
+                  <h2 class="uk-text-center uk-margin-medium-bottom">Kelas B</h2>
+                  <div class="uk-card uk-card-primary uk-card-body">
+                    <ul class="uk-list uk-list-divider uk-text-white">
+                      <li>Certificate of attendance</li>
+                      <li>Access to main stage talkshow sessions</li>
+                      <li>Jogja Startup Day Exclusive Kit</li>
+                    </ul>
+                  </div>
+                  <div class="uk-card uk-card-default uk-card-body">
+                    <ul class="uk-list uk-list-divider">
+                      <li>Network with +1000 attendees</li>
+                      <li>Access to +50 exhibition startups</li>
+                      <li>Access to ground stage</li>
+                      <li>Access to opening and closing ceremony</li>
+                      <li>Access to watch pitching competition</li>
+                      <li>Access to networking speed dating</li>
+                    </ul>
+                  </div>
+                  <button class="uk-button uk-button-primary uk-width-1-1 uk-padding-small">
+                    <h3 class="uk-text-white">Rp. 499.000</h3>
+                  </button>
+                </div>
+                <div>
+                  <h2 class="uk-text-center uk-margin-medium-bottom">Kelas C</h2>
+                  <div class="uk-card uk-card-default uk-card-body">
+                    <ul class="uk-list uk-list-divider">
+                      <li>Network with +1000 attendees</li>
+                      <li>Access to +50 exhibition startups</li>
+                      <li>Access to ground stage</li>
+                      <li>Access to opening and closing ceremony</li>
+                      <li>Access to watch pitching competition</li>
+                      <li>Access to networking speed dating</li>
+                    </ul>
+                  </div>
+                  <button class="uk-button uk-button-primary uk-width-1-1 uk-padding-small">
+                    <h3 class="uk-text-white">FREE</h3>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div :class="startup.width" data-src="./img/akademi.jpg" uk-img>
+        <div class="uk-container">
+          <div v-if="startup.icon">
+            <div class="uk-flex uk-flex-center uk-flex-middle uk-height-viewport">
+              <div>
+                <center>
+                  <div class="uk-icon uk-text-white pointer" uk-icon="icon: chevron-right; ratio: 3"
+                    @click="isSelected('startup')"></div>
+                </center>
+                <p class="uk-text-white">Paket Start Up</p>
+              </div>
+            </div>
+          </div>
+          <div v-else>
+            <div class="uk-flex uk-flex-left uk-flex-middle uk-height-viewport">
+              <div>
+                <div :class="startup.heading">
+                  <b class="uk-text-white">Paket <br> Start Up</b>
+                </div>
+                <div class="uk-flex uk-flex-left">
+                  <div class="uk-button uk-button-primary" @click="isSelected('startup')">
+                    <span class="uk-text-white">try now</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div :class="startup.hidden">
+          <div class="uk-section uk-background-white">
+            <div class="uk-container">
+              <h1 class="uk-margin-medium-bottom uk-text-bold">Fasilitas</h1>
+              <div class="uk-child-width-expand@s" uk-grid>
+                <div>
+                  <div class="uk-card uk-card-primary uk-card-body">
+                    <ul class="uk-list uk-list-divider uk-text-white">
+                      <li>Exhibition Stand</li>
+                      <li>Lunch and Dinner</li>
+                      <li>Certificate of attendance</li>
+                      <li>Access to main stage talkshow sessions</li>
+                      <li>Jogja Startup Day Exclusive Kit</li>
+                      <li>Access to investor speed dating</li>
+                      <li>All videos of main stage talkshow sessions</li>
+                      <li>Access to startup database</li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <div class="uk-card uk-card-default uk-card-body">
+                    <ul class="uk-list uk-list-divider">
+                      <li>Network with +1000 attendees</li>
+                      <li>Access to +50 exhibition startups</li>
+                      <li>Access to ground stage</li>
+                      <li>Access to opening and closing ceremony</li>
+                      <li>Access to watch pitching competition</li>
+                      <li>Access to networking speed dating</li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <button class="uk-button uk-button-primary uk-width-1-1 uk-padding-small">
+                    <div>get ticket now</div>
+                    <h3 class="uk-text-white uk-margin-remove-top">1.299.000 (2 orang)</h3>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit-icons.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        umum: {
+          width: 'uk-height-viewport uk-background-cover uk-width-1-2',
+          heading: 'uk-heading-large uk-margin-medium-bottom uk-text-white uk-text-right',
+          hidden: 'uk-hidden',
+          icon: false,
+        },
+        startup: {
+          width: 'uk-height-viewport uk-background-cover uk-width-1-2',
+          heading: 'uk-heading-large uk-margin-medium-bottom uk-text-white uk-text-left',
+          hidden: 'uk-hidden',
+          icon: false,
+        },
+      },
+      methods: {
+        isSelected(val) {
+          if (val === 'startup') {
+            // width
+            this.umum.width =
+              'uk-height-viewport uk-background-cover uk-width-1-6 uk-position-fixed uk-position-left'
+            this.startup.width = 'uk-height-viewport uk-background-cover uk-width-5-6 uk-position-right'
+            // heading
+            this.umum.heading = 'uk-heading-medium uk-margin-medium-bottom uk-text-white uk-text-right'
+            this.startup.heading = 'uk-heading-large uk-margin-medium-bottom uk-text-white uk-text-left'
+            // hidden
+            this.startup.hidden = 'uk-visible'
+            // icon
+            this.umum.icon = true
+            this.startup.icon = false
+          } else if (val === 'umum') {
+            // width
+            this.startup.width =
+              'uk-height-viewport uk-background-cover uk-width-1-6 uk-position-fixed uk-position-right'
+            this.umum.width = 'uk-height-viewport uk-background-cover uk-width-5-6'
+            // heading
+            this.startup.heading = 'uk-heading-medium uk-margin-medium-bottom uk-text-white uk-text-left'
+            this.umum.heading = 'uk-heading-large uk-margin-medium-bottom uk-text-white uk-text-right'
+            // hidden
+            this.umum.hidden = 'uk-visible'
+            // icon
+            this.startup.icon = true
+            this.umum.icon = false
+          }
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>

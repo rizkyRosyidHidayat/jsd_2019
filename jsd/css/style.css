@@ -1,0 +1,106 @@
+html{scroll-behavior: smooth;}
+
+
+.uk-button-default:hover{
+    background-color: #1e87f0;
+    color: #fff;
+    border: 1px solid transparent;
+}
+
+.uk-text-white{
+    color: #fff !important;
+}
+
+.uk-tab{
+    width: max-content;
+}
+
+.uk-tab>*>a{
+    color: #fff;
+}
+
+.uk-tab>.uk-active>a{
+    color: #999999;
+}
+
+.border-bottom{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #1e87f0 !important;
+}
+
+.uk-border-primary{
+    border: 1px solid #1e87f0 !important;
+    color: #1e87f0;
+}
+
+.detail-pemateri{
+    padding: 0px 20px;
+    margin: 20px 0px;
+    border-left: 1px solid #999999;
+}
+
+.uk-navbar-container:not(.uk-navbar-transparent){
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.uk-padding-bottom{
+    padding-bottom: 60px;
+}
+
+.acara{
+    margin-top: -80px;   
+}
+
+.uk-background-white{background-color: #fff !important;}
+.uk-background-purple{background-color: #4c177d !important;}
+
+.detail-acara-left{
+    margin-left: -80px;
+}
+
+.detail-acara-right{
+    margin-right: -80px;
+}
+
+@media (max-width: 640px){
+    .detail-acara-left{
+        margin-left: 0px;
+    }    
+    .detail-acara-right{
+        margin-right: 0px;
+    }
+    .order-2{
+        order: 2;
+    }
+    .uk-text-right.right-to-left{
+        text-align: left !important;
+        order: 2 !important;
+    }
+    .merchandise.uk-child-width-1-2\@s > * {
+        width: 50%;
+    }
+}
+
+.harga-barang{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #999999;
+}
+
+.uk-nav>li>a{
+    padding: 10px 0px;
+}
+
+.uk-background-transparent{
+    background-color: transparent !important;
+}
+
+.bg-hiding{
+    z-index: -1;
+}
+
+.uk-textarea{
+    resize: vertical !important;
+}

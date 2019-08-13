@@ -1,0 +1,27 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'roboto', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin-bottom: 0;
+}
+
+.uk-width-5-6, .uk-width-1-6, .uk-heading-medium, 
+.uk-heading-large, .uk-visible{
+    transition: all 0.5s ease;
+}
+
+.uk-text-white{
+    color: #ffffff !important;
+}
+
+.uk-background-white{
+    background-color: #ffffff;
+}
+
+.pointer{
+    cursor: pointer;
+}
